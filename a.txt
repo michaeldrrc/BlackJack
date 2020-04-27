@@ -1,0 +1,95 @@
+class BlackjackError(Exception):
+Do nothing on BlackJack Error
+
+CLASS Player
+Variable: number of players under 21 points - used for dealer card calculations
+Variable: player's name as an argument
+Variable: player's list of cards
+Variable: player's money
+Variable: player's current bet
+Variable: player has blackjack pair
+
+A function that calculates dealer cards
+def calculate_dealer_cards(self):
+
+Check if dealer has blackjack pair
+if some players are still in the game
+keep collecting cards until 17 points is reached
+
+A function that calculate player card points
+def calculate_card_points(self):
+go through all cards in list
+add the value of cards from the card_value list
+count the number of aces in the hand
+Aces are worth 11 point unless you went over 21
+while cardPoints > 21 and numberAces > 0:
+fix Ace value
+
+A function that prints card and info to screen
+def print_cards(self):
+print all cards, points, bet, and total money
+
+A function that sets player's bet for the round
+def do_betting(self):
+repeat input until bet meets specifications
+
+A function that deals and hits cards
+def play_round_of_cards(self):
+Deal for the start of the round.
+print cards and info to the screen
+Check if players cards are blackjack
+start asking user for card hits
+Deal card to the player
+if player went over 21
+Exit the loop -- stop hitting
+A function that prints the dealers cards
+
+def print_dealer_cards(self):
+print all cards that the dealer has
+
+A function that reinitializes
+def Initialize(self):
+reset player's card list, bet, and BlackJack flag
+
+CLASS Deck_of_cards(object):
+Variable: random_Deck = []
+Variable: Suits = ['spades', 'clubs', 'diamonds', 'hearts']
+Variable: Cards = ['A','K','Q','J','10','9','8','7','6','5','4','3','2']
+Variable: Card_values = [11,10,10,10,10,9,8,7,6,5,4,3,2]
+Variable: ordered_deck = []
+
+A function that does the initial construction of the deck
+def construct_ordered_deck(self):
+From the suit, value, and card lists, assemble are new card and appended to the ordered deck
+
+A function that does the final construction of the deck
+def construct_random_deck(self):
+randomly pick a card from the order deck and append to the random deck
+select a random card from the ordered deck
+deleted card so that it does not get assigned more than once in random deck
+
+A function that deals the specified number of cards to the player
+def deal_cards(self, number_of_cards, player):
+select the first cards on the deck
+assign the cards to the player
+delete assigned cards from the random deck
+
+A function that calculates the winnings of a player and a dealer,
+and prints a statement about the player's current state.
+def calculate_winnings(p1, D):
+If player has blackjack and dealer does not.  Player wins the round
+If player and dealer have blackjack.  Bet is pushed
+Player loses the round if the value of its cards are over 21
+Player wins the round if the value of the dealer's cards is over 21
+Player wins the round if the value of its cards is greater than the dealers
+Player loses the round if the value of its cards is lower than the dealers
+If player money is 0, add 25 dollars
+
+Main code
+Create players.
+Create the deck of cards and shuffle
+Initialize players variables for the round
+Start the betting round
+Play the card rounds
+See who won by calling calculate_winnings
+check if player wants to play another round
